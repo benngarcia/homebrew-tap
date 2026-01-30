@@ -1,18 +1,19 @@
 class Cwt < Formula
   desc "A TUI tool to manage Git Worktrees for AI coding agents"
   homepage "https://github.com/benngarcia/claude-worktree"
-  url "https://github.com/benngarcia/claude-worktree/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "85854ab466ef667701022ae8fbdca94eed919cb3cf821833b8e8290f59a0fdd4"
+  url "https://rubygems.org/downloads/claude-worktree-0.1.4.gem"
+  sha256 "ed5480ce316a30d0f42c1c380803a4fec9a644069db82aa324efe54b3c6b1d8f"
   license "MIT"
 
   depends_on "ruby"
+  depends_on "rust" => :build
 
   def install
     ENV["GEM_HOME"] = libexec
-    system "gem", "build", "claude-worktree.gemspec"
-    system "gem", "install", "claude-worktree-#{version}.gem"
+    ENV["GEM_PATH"] = libexec
+    system "gem", "install", "--no-document", cached_download
     bin.install libexec/"bin/cwt"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"], GEM_PATH: ENV["GEM_PATH"])
   end
 
   test do
