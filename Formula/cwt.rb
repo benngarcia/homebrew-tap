@@ -6,7 +6,6 @@ class Cwt < Formula
   license "MIT"
 
   depends_on "ruby"
-  depends_on "rust" => :build
 
   def install
     ENV["GEM_HOME"] = libexec
