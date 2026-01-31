@@ -1,8 +1,8 @@
 class Cwt < Formula
   desc "A TUI tool to manage Git Worktrees for AI coding agents"
   homepage "https://github.com/bucket-robotics/claude-worktree"
-  url "https://rubygems.org/downloads/claude-worktree-0.1.4.gem"
-  sha256 "ed5480ce316a30d0f42c1c380803a4fec9a644069db82aa324efe54b3c6b1d8f"
+  url "https://rubygems.org/downloads/claude-worktree-0.2.0.gem"
+  sha256 "5610e4d50b22fa8c862760f49a5a456c6899858bc073c35e3591829bb5f1b817"
   license "MIT"
 
   depends_on "ruby"
